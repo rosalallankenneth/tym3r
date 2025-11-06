@@ -1,6 +1,10 @@
+import Timer from "../components/Timer";
+
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <Timer />
+    </div>
   )
 }
 
