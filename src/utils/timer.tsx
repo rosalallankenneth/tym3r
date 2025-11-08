@@ -22,3 +22,23 @@ export function getTimeUntilMinuteMark(minuteMark = 30) {
     nextMark: next,
   };
 }
+
+export function requestNotificationPermission() {
+  if ('Notification' in window) {
+    if (Notification.permission === 'default') {
+      Notification.requestPermission().then((permission) => {
+        console.log('Notification permission:', permission)
+      })
+    }
+  } else {
+    console.warn('Browser does not support notifications.')
+  }
+}
+export function showTimerNotification() {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    new Notification('⏰ Timer Done!', {
+      body: 'Your countdown has finished.',
+      icon: '/icon.png', // optional, from your public folder
+    })
+  }
+}
