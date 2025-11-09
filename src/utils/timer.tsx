@@ -42,3 +42,7 @@ export function showTimerNotification() {
     })
   }
 }
+
+// TODOS
+// Every n minutes timer
+// Countdown Timer
